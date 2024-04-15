@@ -6,3 +6,9 @@ repos:
     hooks:
       - id: commitlint
         stages: [commit-msg]
+  - repo: local
+    hooks:
+      - id: trunk-fmt
+        name: universal code formatter
+        entry: ./trunk fmt --force
+        language: system

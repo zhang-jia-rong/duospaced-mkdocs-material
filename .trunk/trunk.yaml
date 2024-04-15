@@ -33,9 +33,3 @@ actions:
     - trunk-fmt-pre-commit
   enabled:
     - trunk-upgrade-available
-    - custom-git-hook
-  definitions:
-    - id: custom-git-hook
-      triggers:
-        - git_hooks: [pre-commit]
-      run: ./trunk fmt --force
