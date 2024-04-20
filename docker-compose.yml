@@ -1,0 +1,9 @@
+services:
+  mkdocs:
+    container_name: mkdocs
+    image: ckwing/duospaced-mkdocs-material
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/docs
