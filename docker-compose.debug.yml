@@ -1,9 +1,14 @@
 services:
   mkdocs:
     container_name: mkdocs
-    image: ckwing/duospaced-mkdocs-material
+    image: ckwing/duospaced-mkdocs-material:${VERSION}-dev
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
+      args:
+        VERSION: ${VERSION}
+        DEBUG: -dev
+        BUILD_DATE: ${BUILD_DATE}
+        VCS_REF: ${VCS_REF}
     volumes:
       - .:/docs

@@ -12,16 +12,20 @@ plugins:
 # Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
 runtimes:
   enabled:
+    - go@1.21.0
     - node@18.12.1
     - python@3.10.8
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
   enabled:
-    - osv-scanner@1.7.0
+    - dotenv-linter@3.3.0
+    - shellcheck@0.10.0
+    - shfmt@3.6.0
+    - osv-scanner@1.7.2
     - taplo@0.8.1
     - hadolint@2.12.0
     - terrascan@1.19.1
-    - checkov@3.2.69
+    - checkov@3.2.71
     - git-diff-check
     - markdownlint@0.39.0
     - prettier@3.2.5
