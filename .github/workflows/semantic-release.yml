@@ -1,0 +1,68 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - 'release/[0-9]+.[0-9]+'
+  workflow_dispatch:
+    branches:
+      - 'develop'
+      - 'release/*'
+    inputs:
+      merge_destination:
+        description: 'Branch to merge into (only used when dispatching from develop branch)'
+        required: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency: release
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Print next version
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination == ''
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          print: true
+        id: print
+
+      - name: Create new release branch
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination == ''
+        run: |
+          VERSION=${{ steps.print.outputs.version }}
+          MAJOR_MINOR_VERSION=$(echo $VERSION | cut -d. -f1,2)
+          git show-ref --verify --quiet refs/heads/release/$MAJOR_MINOR_VERSION || git checkout -b release/$MAJOR_MINOR_VERSION
+          git push origin HEAD
+
+      - name: Merge changes into existing release branch
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination != ''
+        run: |
+          git show-ref --verify --quiet refs/heads/${{ github.event.inputs.merge_destination }} && git checkout ${{ github.event.inputs.merge_destination }}
+          git merge --ff-only develop
+          git push origin HEAD
+
+      - name: Python Semantic Release
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git-committer-name: Zhang Jia Rong
+          git-committer-email: zhang-jia-rong@outlook.com
+          push: false
+          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
+
+      - name: Promote pre-release to release
+        if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')
+        run: |
+          git checkout master
+          git merge --ff-only ${{ github.ref }}
+          git push origin HEAD:master
+          git checkout develop
+          git merge --ff-only ${{ github.ref }}
+          git push origin HEAD:develop
