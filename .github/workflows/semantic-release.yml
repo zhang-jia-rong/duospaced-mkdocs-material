@@ -57,14 +57,12 @@ jobs:
           git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
           git config --global commit.gpgsign true
 
-      - name: List files in current directory
-        run: ls -la
-
       - name: Sync version to .env file
         run: |
-          grep -v '^VERSION=' .env > .env.tmp
-          mv .env.tmp .env
-          echo "VERSION=${{ steps.print.outputs.version }}" >> .env
+          grep -v '^VERSION=' .env > .env.tmp || echo "grep exit status: $?"
+          cat .env.tmp || echo "cat .env.tmp output: $?"
+          mv .env.tmp .env || echo "mv exit status: $?"
+          echo "VERSION=${{ steps.print.outputs.version }}" >> .env || echo "echo exit status: $?"
 
       - name: Stage .env file
         run: git add .env
