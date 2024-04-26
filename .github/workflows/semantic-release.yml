@@ -30,6 +30,7 @@ jobs:
         uses: python-semantic-release/python-semantic-release@master
         with:
           root_options: -vv --noop
+          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
         id: print
 
       - name: Create new release branch
@@ -55,6 +56,9 @@ jobs:
         run: |
           git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
           git config --global commit.gpgsign true
+
+      - name: List files in current directory
+        run: ls -la
 
       - name: Sync version to .env file
         run: |
