@@ -71,8 +71,8 @@ jobs:
         uses: python-semantic-release/python-semantic-release@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          git-committer-name: Zhang Jia Rong
-          git-committer-email: zhang-jia-rong@outlook.com
+          git_committer_name: Zhang Jia Rong
+          git_committer_email: zhang-jia-rong@outlook.com
           prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
         id: semantic
 
