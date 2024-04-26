@@ -3,15 +3,15 @@ name: Semantic Release
 on:
   push:
     branches:
-      - 'release/[0-9]+.[0-9]+'
+      - release/[0-9]+.[0-9]+
   workflow_dispatch:
-    branches:
-      - 'develop'
-      - 'release/*'
     inputs:
       merge_destination:
-        description: 'Branch to merge into (only used when dispatching from develop branch)'
+        description: Branch to merge into (only used when dispatching from develop branch)
         required: false
+    branches:
+      - develop
+      - release/*
 
 jobs:
   release:
@@ -27,7 +27,6 @@ jobs:
           fetch-depth: 0
 
       - name: Print next version
-        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination == ''
         uses: python-semantic-release/python-semantic-release@master
         with:
           print: true
@@ -48,6 +47,24 @@ jobs:
           git merge --ff-only develop
           git push origin HEAD
 
+      - name: Import GPG key
+        run: |
+          echo -n "${{ secrets.GPG_PRIVATE_KEY }}" | base64 --decode | gpg --import
+
+      - name: Configure Git for GPG
+        run: |
+          git config --global user.signingkey ${{ secrets.GPG_KEY_ID }}
+          git config --global commit.gpgsign true
+
+      - name: Sync version to .env file
+        run: |
+          grep -v '^VERSION=' .env > .env.tmp
+          mv .env.tmp .env
+          echo "VERSION=${{ steps.print.outputs.version }}" >> .env
+
+      - name: Stage .env file
+        run: git add .env
+
       - name: Python Semantic Release
         uses: python-semantic-release/python-semantic-release@master
         with:
@@ -56,6 +73,7 @@ jobs:
           git-committer-email: zhang-jia-rong@outlook.com
           push: false
           prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
+        id: semantic
 
       - name: Promote pre-release to release
         if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')
@@ -66,3 +84,16 @@ jobs:
           git checkout develop
           git merge --ff-only ${{ github.ref }}
           git push origin HEAD:develop
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}
