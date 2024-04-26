@@ -8,7 +8,7 @@ allow_zero_version = true
 tag_format = "v{version}"
 
 [tool.semantic_release.branches.release]
-match = "release\\/\\d+.\\d+"
+match = "(release\\/\\d+.\\d+|develop)"
 prerelease_token = "rc"
 prerelease = false
 
