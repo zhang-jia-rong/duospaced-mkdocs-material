@@ -89,4 +89,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}
+          tags: ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }},ckwing/duospaced-mkdocs-material:latest
