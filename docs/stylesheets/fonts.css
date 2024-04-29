@@ -1,0 +1,283 @@
+@font-face {
+  font-family: 'Maple Mono';
+  src: url(MapleMono-Bold.woff2) format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Maple Mono';
+  src: url(MapleMono-BoldItalic.woff2) format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maple Mono';
+  src: url(MapleMono-Italic.woff2) format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maple Mono';
+  src: url(MapleMono-Light.woff2) format('woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Maple Mono';
+  src: url(MapleMono-LightItalic.woff2) format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maple Mono';
+  src: url(MapleMono-Regular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Maple Mono SC NF';
+  src: url(MapleMono-SC-NF-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Maple Mono SC NF';
+  src: url(MapleMono-SC-NF-BoldItalic.ttf) format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maple Mono SC NF';
+  src: url(MapleMono-SC-NF-Italic.ttf) format('truetype');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maple Mono SC NF';
+  src: url(MapleMono-SC-NF-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Maple Mono SC NF';
+  src: url(MapleMono-SC-NF-LightItalic.ttf) format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Maple Mono SC NF';
+  src: url(MapleMono-SC-NF-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-ExtraLight.ttf) format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-Heavy.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-Normal.ttf) format('truetype');
+  font-weight: 370;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded HC';
+  src: url(ResourceHanRoundedHC-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-ExtraLight.ttf) format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-Heavy.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-Normal.ttf) format('truetype');
+  font-weight: 370;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded J';
+  src: url(ResourceHanRoundedJ-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-ExtraLight.ttf) format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-Heavy.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-Normal.ttf) format('truetype');
+  font-weight: 370;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded K';
+  src: url(ResourceHanRoundedK-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-ExtraLight.ttf) format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-Heavy.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-Normal.ttf) format('truetype');
+  font-weight: 370;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded SC';
+  src: url(ResourceHanRoundedSC-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-ExtraLight.ttf) format('truetype');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-Heavy.ttf) format('truetype');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-Light.ttf) format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-Medium.ttf) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-Normal.ttf) format('truetype');
+  font-weight: 370;
+}
+
+@font-face {
+  font-family: 'Resource Han Rounded TC';
+  src: url(ResourceHanRoundedTC-Regular.ttf) format('truetype');
+  font-weight: 400;
+}
