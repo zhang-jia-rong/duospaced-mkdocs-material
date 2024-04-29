@@ -9,18 +9,37 @@ on:
       merge_destination:
         description: Branch to merge into (only used when dispatching from develop branch)
         required: false
+      debug:
+        description: 'Run debug workflow'
+        required: true
+        default: 'false'
     branches:
       - develop
       - release/*
 
 jobs:
+  debug:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.debug == 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Print next version
+        uses: python-semantic-release/python-semantic-release@master
+        with:
+          root_options: -vv --noop --strict
+          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
+        id: print
+
   release:
     runs-on: ubuntu-latest
     concurrency: release
     permissions:
       id-token: write
       contents: write
-
+    if: github.event.inputs.debug != 'true'
     steps:
       - uses: actions/checkout@v4
         with:
