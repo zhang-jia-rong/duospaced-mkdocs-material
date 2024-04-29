@@ -16,4 +16,7 @@ for key in "${!env_vars[@]}"; do
 	echo "$key=${env_vars[$key]}" >>.env
 done
 
-docker-compose up --build
+# Only run docker-compose up --build if not in CI
+if [ "$1" != "ci" ]; then
+	docker-compose up --build
+fi
