@@ -30,7 +30,8 @@ jobs:
         uses: python-semantic-release/python-semantic-release@master
         with:
           root_options: -vv --noop --strict
-          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
+          prerelease: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
+          as_prerelease: true
         id: print
 
   release:
@@ -49,7 +50,8 @@ jobs:
         uses: python-semantic-release/python-semantic-release@master
         with:
           root_options: -vv --noop --strict
-          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
+          prerelease: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
+          as_prerelease: true
         id: print
 
       - name: Create new release branch
@@ -92,7 +94,8 @@ jobs:
           ssh_public_signing_key: ${{ secrets.SSH_PUBLIC_SIGNING_KEY }}
           ssh_private_signing_key: ${{ secrets.SSH_PRIVATE_SIGNING_KEY }}
           root_options: -vv --strict
-          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')) }}
+          prerelease: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
+          as_prerelease: true
         id: semantic
 
       - name: Promote pre-release to release
