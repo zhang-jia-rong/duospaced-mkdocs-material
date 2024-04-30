@@ -1,0 +1,19 @@
+name: deploy-docs
+on:
+  push:
+    branches:
+      - master
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name Zhang Jia Rong
+          git config user.email zhang-jia-rong@outlook.com
+      - name: Deploy with MkDocs Material Docker image
+        run: |
+          docker run --rm -v ${PWD}:/docs -v ~/.ssh:/root/.ssh ckwing/duospaced-mkdocs-material:latest gh-deploy --force

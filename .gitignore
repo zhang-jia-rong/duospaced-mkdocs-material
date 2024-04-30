@@ -31,8 +31,6 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/git,virtualenv
-mkdocs.yml
-docs/index.md
 site
 docs/stylesheets/MapleMono-Bold.woff2
 docs/stylesheets/MapleMono-BoldItalic.woff2

@@ -1,0 +1,5 @@
+site_name: DuoSpaced Material for MkDocs
+
+extra_css:
+  - stylesheets/default_styles.css
+  - stylesheets/fonts.css
