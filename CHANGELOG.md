@@ -2,6 +2,29 @@
 
 
 
+## v0.2.0 (2024-04-30)
+
+### Ci
+
+* ci: resolve issue with merging release/0.2 ([`0728c86`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0728c86e65d5ad79bb40750906141434a54511c8))
+
+* ci: update semantic-release workflow ([`8bf1db3`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/8bf1db3f8bc8f202214aaf56f0645abd3590c1ce))
+
+* ci: fix merge issue in semantic-release.yml ([`77fdf84`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/77fdf849762c9a10318650e47166fb0f579b2ebf))
+
+* ci: update workflow to include prerelase flag ([`ff3ff9f`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/ff3ff9fb2b3b75720126ffcab7fc5575c4323c2b))
+
+### Documentation
+
+* docs: update README for using DuoSpaced Material ([`3e07c29`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/3e07c29b13fa74f8db822797261d1193aa62b303))
+
+* docs: add deployment workflow for documentation ([`39556b3`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/39556b3a881f3773592e9cb93f8f81a24a489e8a))
+
+### Style
+
+* style: add config for linters to ignore CHANGELOG ([`a253e1a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a253e1a964d1881795bcf8fcab9ca79cda2c7c03))
+
+
 ## v0.2.0-rc.2 (2024-04-30)
 
 ### Feature
