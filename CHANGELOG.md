@@ -2,6 +2,13 @@
 
 
 
+## v0.2.0-rc.2 (2024-04-30)
+
+### Feature
+
+* feat: add default_styles.css for font settings ([`9fad624`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/9fad624d8d175f7c68dff3c9a4ecd07620153bec))
+
+
 ## v0.2.0-rc.1 (2024-04-30)
 
 ### Ci
