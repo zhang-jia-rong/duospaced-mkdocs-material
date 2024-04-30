@@ -11,7 +11,7 @@ env_vars[BUILD_DATE]=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
 env_vars[VCS_REF]=$(git rev-parse HEAD)
 
 # Write the updated values back to the .env file
->.env
+true >.env
 for key in "${!env_vars[@]}"; do
 	echo "${key}=${env_vars[${key}]}" >>.env
 done

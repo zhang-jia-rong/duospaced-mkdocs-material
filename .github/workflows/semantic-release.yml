@@ -10,7 +10,7 @@ on:
         description: Branch to merge into (only used when dispatching from develop branch)
         required: false
       debug:
-        description: 'Run debug workflow'
+        description: Run debug workflow
         required: true
         default: 'false'
     branches:
@@ -121,5 +121,5 @@ jobs:
         with:
           push: true
           set: |
-            'mkdocs.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}'
-            ${{ !contains(steps.semantic.outputs.version, '-') && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:latest' }}
+            mkdocs.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}
+            ${{ contains(steps.semantic.outputs.version, '-') && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:next' || 'mkdocs.tags=ckwing/duospaced-mkdocs-material:latest' }}
