@@ -9,7 +9,7 @@ tag_format = "v{version}"
 
 [tool.semantic_release.branches.master]
 match = "master"
-prerelease = true
+prerelease = false
 
 [tool.semantic_release.branches.release]
 match = "(release\\/\\d+.\\d+|develop)"
