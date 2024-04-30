@@ -22,10 +22,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/') && 'master' || '' }}
 
-      - name: Merge release branch into master
+      - name: Checkout master and merge release branch
         run: |
+          git checkout master
           git merge --ff-only ${{ github.ref_name }}
         if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')
 
