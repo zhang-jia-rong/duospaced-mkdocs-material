@@ -2,6 +2,33 @@
 
 
 
+## v0.2.0-rc.1 (2024-04-30)
+
+### Ci
+
+* ci: update release configuration and Docker action ([`a5ade1b`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a5ade1b1e4fb346d9b87f149c794a16f8a4502bf))
+
+* ci: update workflow to include ref argument ([`d3eecb8`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/d3eecb82003e4035f252c49d1ef39d7627869e60))
+
+* ci: exclude force argument and as_prerelease flag ([`4b970d5`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4b970d50b3b343b559df391f85a398d7767b175d))
+
+* ci: update workflow to include force argument ([`7d310e4`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7d310e4d5467a878ca595851edb9f77dd8a6cb1a))
+
+* ci: update semantic-release configuration ([`38d7577`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/38d7577164396ac6bf49ad93d86d1ecdaee6bc00))
+
+* ci: update workflow to include as_prerelease flag ([`94b8607`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/94b86079700c5937be1c32bc5042adec947371c5))
+
+* ci: add debug workflow for semantic-release ([`a423e98`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a423e982b34e1698f7965043cc689973af3f8c88))
+
+* ci: update Docker actions in semantic-release ([`ab96d49`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/ab96d49deca20b337b3648cd6394a2184f859db1))
+
+* ci: update tags in semantic-release workflow ([`7e65a17`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7e65a17d9f709b8b7dea5e93725675d020816faa))
+
+### Feature
+
+* feat: add font downloads to build script ([`df0eb96`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/df0eb9697fa1ae1ca8c58790239e19280a36de28))
+
+
 ## v0.1.0 (2024-04-27)
 
 
