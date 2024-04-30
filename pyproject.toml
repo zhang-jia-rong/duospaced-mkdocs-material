@@ -7,10 +7,14 @@ major_on_zero = true
 allow_zero_version = true
 tag_format = "v{version}"
 
+[tool.semantic_release.branches.master]
+match = "master"
+prerelease = true
+
 [tool.semantic_release.branches.release]
 match = "(release\\/\\d+.\\d+|develop)"
 prerelease_token = "rc"
-prerelease = false
+prerelease = true
 
 [tool.semantic_release.changelog]
 template_dir = "templates"
