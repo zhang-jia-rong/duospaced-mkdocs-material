@@ -9,29 +9,8 @@ on:
       merge_destination:
         description: Branch to merge into (only used when dispatching from develop branch)
         required: false
-      debug:
-        description: Run debug workflow
-        required: true
-        default: 'false'
-    branches:
-      - develop
-      - release/*
 
 jobs:
-  debug:
-    runs-on: ubuntu-latest
-    if: github.event.inputs.debug == 'true'
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Print next version
-        uses: python-semantic-release/python-semantic-release@master
-        with:
-          root_options: -vv --noop --strict
-          prerelase: ${{ github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/') && 'true' || 'false' }}
-
   release:
     runs-on: ubuntu-latest
     concurrency: release
@@ -45,11 +24,15 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/') && 'master' || '' }}
 
+      - name: Merge release branch into master
+        run: |
+          git merge --ff-only ${{ github.ref }}
+        if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')
+
       - name: Print next version
         uses: python-semantic-release/python-semantic-release@master
         with:
           root_options: -vv --noop --strict
-          prerelase: ${{ github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/') && 'true' || 'false' }}
         id: print
 
       - name: Create new release branch
@@ -92,7 +75,6 @@ jobs:
           ssh_public_signing_key: ${{ secrets.SSH_PUBLIC_SIGNING_KEY }}
           ssh_private_signing_key: ${{ secrets.SSH_PRIVATE_SIGNING_KEY }}
           root_options: -vv --strict
-          prerelase: ${{ github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/') && 'true' || 'false' }}
         id: semantic
 
       - name: Promote pre-release to release
