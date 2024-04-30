@@ -1,0 +1,6 @@
+:root {
+  --md-text-font: 'Maple Mono', 'Resource Han Rounded SC',
+    'Resource Han Rounded TC', 'Resource Han Rounded HC',
+    'Resource Han Rounded J', 'Resource Han Rounded K';
+  --md-code-font: 'Maple Mono SC NF';
+}
