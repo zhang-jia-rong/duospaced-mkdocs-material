@@ -30,9 +30,6 @@ jobs:
         uses: python-semantic-release/python-semantic-release@master
         with:
           root_options: -vv --noop --strict
-          prerelease: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
-          as_prerelease: true
-        id: print
 
   release:
     runs-on: ubuntu-latest
@@ -51,7 +48,6 @@ jobs:
         with:
           root_options: -vv --noop --strict
           prerelease: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
-          as_prerelease: true
         id: print
 
       - name: Create new release branch
@@ -85,6 +81,27 @@ jobs:
       - name: Stage .env file
         run: git add .env
 
+      - name: Determine force argument
+        id: determine_force
+        run: |
+          git fetch --tags
+          LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+          LATEST_TAG=${LATEST_TAG#v}  # Remove 'v' prefix
+          PRINT_VERSION=${{ steps.print.outputs.version }}
+
+          if [[ $PRINT_VERSION != $LATEST_TAG ]]; then
+            IFS='.' read -ra LATEST_TAG_PARTS <<< "$LATEST_TAG"
+            IFS='.' read -ra PRINT_VERSION_PARTS <<< "$PRINT_VERSION"
+
+            if [[ ${PRINT_VERSION_PARTS[0]} -gt ${LATEST_TAG_PARTS[0]} ]]; then
+              echo "::set-output name=force::major"
+            elif [[ ${PRINT_VERSION_PARTS[1]} -gt ${LATEST_TAG_PARTS[1]} ]]; then
+              echo "::set-output name=force::minor"
+            else
+              echo "::set-output name=force::patch"
+            fi
+          fi
+
       - name: Python Semantic Release
         uses: python-semantic-release/python-semantic-release@master
         with:
@@ -94,8 +111,8 @@ jobs:
           ssh_public_signing_key: ${{ secrets.SSH_PUBLIC_SIGNING_KEY }}
           ssh_private_signing_key: ${{ secrets.SSH_PRIVATE_SIGNING_KEY }}
           root_options: -vv --strict
-          prerelease: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
-          as_prerelease: true
+          prerelease: ${{ !(github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/') && github.event.inputs.merge_destination == '') }}
+          force: ${{ steps.determine_force.outputs.force }}
         id: semantic
 
       - name: Promote pre-release to release
@@ -118,7 +135,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
+        if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')
         uses: docker/bake-action@v4
         with:
           push: true
-          set: '*.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }},ckwing/duospaced-mkdocs-material:latest'
+          set: |
+            'mkdocs.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}'
+            ${{ !contains(steps.semantic.outputs.version, '-') && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:latest' }}
