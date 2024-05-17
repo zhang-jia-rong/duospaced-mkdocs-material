@@ -17,7 +17,6 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    if: github.event.inputs.debug != 'true'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -105,9 +104,9 @@ jobs:
         id: extract
         run: |
           VERSION=${{ steps.semantic.outputs.version }}
-          echo "::set-output name=major::${VERSION%%.*}"
-          echo "::set-output name=minor::${VERSION%.*}"
-          echo "::set-output name=patch::${VERSION##*.}"
+          echo "major=${VERSION%%.*}" >> $GITHUB_ENV
+          echo "minor=${VERSION%.*}" >> $GITHUB_ENV
+          echo "patch=${VERSION##*.}" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/bake-action@v4
@@ -116,6 +115,6 @@ jobs:
           set: |
             mkdocs.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}
             ${{ contains(steps.semantic.outputs.version, '-') && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:next' || 'mkdocs.tags=ckwing/duospaced-mkdocs-material:latest' }}
-            ${{ steps.extract.outputs.major && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:' + steps.extract.outputs.major }}
-            ${{ steps.extract.outputs.minor && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:' + steps.extract.outputs.major + '.' + steps.extract.outputs.minor }}
-            ${{ steps.extract.outputs.patch && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:' + steps.extract.outputs.major + '.' + steps.extract.outputs.minor + '.' + steps.extract.outputs.patch }}
+            ${{ env.major && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}', env.major) }}
+            ${{ env.minor && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}.{1}', env.major, env.minor) }}
+            ${{ env.patch && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}.{1}.{2}', env.major, env.minor, env.patch) }}
