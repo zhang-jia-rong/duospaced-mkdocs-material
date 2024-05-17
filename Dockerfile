@@ -2,7 +2,7 @@ FROM squidfunk/mkdocs-material:9.5.17
 
 RUN adduser --disabled-password --gecos '' mkdocs-user
 
-COPY docs/stylesheets /docs/
+COPY docs/stylesheets /docs/docs/stylesheets
 RUN chown -R mkdocs-user:mkdocs-user /docs/
 
 # Copy the stylesheets directory to /tmp/mkdocs_stylesheets_safe
