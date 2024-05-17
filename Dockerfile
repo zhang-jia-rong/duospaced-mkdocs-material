@@ -5,6 +5,9 @@ RUN adduser --disabled-password --gecos '' mkdocs-user
 COPY docs/stylesheets /docs/
 RUN chown -R mkdocs-user:mkdocs-user /docs/
 
+# Copy the stylesheets directory to /tmp/mkdocs_stylesheets_safe
+RUN cp -r /docs/docs/stylesheets /tmp/mkdocs_stylesheets_safe
+
 USER mkdocs-user
 
 HEALTHCHECK --interval=1m --timeout=3s --start-period=30s --retries=3 \
@@ -26,3 +29,6 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.title="duospaced-mkdocs-material" \
       org.opencontainers.image.url="https://github.com/zhang-jia-rong/duospaced-mkdocs-material" \
       org.opencontainers.image.version=$VERSION${DEBUG}
+
+# Copy the stylesheets directory back to its original location and run the original command
+CMD ["sh", "-c", "cp -rn /tmp/mkdocs_stylesheets_safe/* /docs/docs/stylesheets && exec mkdocs \"$@\"", "--"]
