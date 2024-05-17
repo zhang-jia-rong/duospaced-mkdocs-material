@@ -2,6 +2,35 @@
 
 
 
+## v0.3.0 (2024-05-17)
+
+### Ci
+
+* ci: remove &#34;Configure Git Credentials&#34;
+
+This commit removes the &#34;Configure Git
+Credentials&#34; step from the Deploy Docs workflow.
+The Docker-based deployment does not require these
+credentials, making this step unnecessary. ([`eddabdb`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/eddabdbed3f68acdc2db68515355036801722cef))
+
+* ci: refine Docker image tagging in GitHub Actions
+
+This commit adjusts the Docker image tagging strategy in the
+semantic-release workflow. Now, images will be tagged with the full
+version, the major and minor version, the major version (excluding &#39;0&#39;),
+and either &#39;latest&#39; or &#39;next&#39; based on the version. This change improves
+the management and identification of Docker images. ([`b9b26c2`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/b9b26c28c748bcc23fa2f499ed0a525a9b37a3ec))
+
+* ci: update Docker tagging in GitHub Actions
+
+This commit modifies the semantic-release workflow to adjust the Docker
+image tagging strategy. Images will now be tagged with the full version,
+the major version with `.x` (if the major version is not `0`), and
+either the `latest` or `next` tag based on whether the version includes
+a `-`. This aligns with our versioning policy and aids in Docker image
+management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6c131c60cc616d2586feec107671430a02df2047))
+
+
 ## v0.3.0-rc.1 (2024-05-17)
 
 ### Ci
