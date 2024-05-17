@@ -2,6 +2,25 @@
 
 
 
+## v0.3.0-rc.1 (2024-05-17)
+
+### Ci
+
+* ci: revise semantic-release syntax ([`3ae7b2c`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/3ae7b2c419a5ba069a83907631b4d598a0c3bc11))
+
+* ci: rename workflow to &#39;Deploy Docs&#39; ([`4be7fdc`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4be7fdc7ee6f5eda326f4377561cfc4c5632dfc6))
+
+* ci: update image tags based on SemVer components ([`9130ebc`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/9130ebc0bd51eb3106f91ebddce2226278901d77))
+
+### Feature
+
+* feat: copy stylesheets directory for safekeeping ([`75421c7`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/75421c744f704f5fdfd291fca348d97bf6f39083))
+
+### Fix
+
+* fix: update path for copying stylesheets directory ([`0afa194`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0afa194bb61b9f5656692a7ac060dc01a715cbd7))
+
+
 ## v0.2.0 (2024-04-30)
 
 ### Ci
