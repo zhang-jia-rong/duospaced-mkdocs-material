@@ -101,6 +101,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Extract version components
+        id: extract
+        run: |
+          VERSION=${{ steps.semantic.outputs.version }}
+          echo "::set-output name=major::${VERSION%%.*}"
+          echo "::set-output name=minor::${VERSION%.*}"
+          echo "::set-output name=patch::${VERSION##*.}"
+
       - name: Build and push Docker image
         uses: docker/bake-action@v4
         with:
@@ -108,3 +116,6 @@ jobs:
           set: |
             mkdocs.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}
             ${{ contains(steps.semantic.outputs.version, '-') && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:next' || 'mkdocs.tags=ckwing/duospaced-mkdocs-material:latest' }}
+            ${{ steps.extract.outputs.major && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:' + steps.extract.outputs.major }}
+            ${{ steps.extract.outputs.minor && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:' + steps.extract.outputs.major + '.' + steps.extract.outputs.minor }}
+            ${{ steps.extract.outputs.patch && 'mkdocs.tags=ckwing/duospaced-mkdocs-material:' + steps.extract.outputs.major + '.' + steps.extract.outputs.minor + '.' + steps.extract.outputs.patch }}
