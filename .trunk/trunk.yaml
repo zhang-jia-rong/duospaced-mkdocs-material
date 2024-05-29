@@ -37,6 +37,7 @@ lint:
     - linters: [ALL]
       paths:
         - CHANGELOG.md
+        - material/**
 actions:
   disabled:
     - trunk-announce

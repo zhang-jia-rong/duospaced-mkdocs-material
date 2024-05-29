@@ -10,6 +10,6 @@ repos:
     hooks:
       - id: trunk-fmt
         name: universal code formatter
-        entry: ./trunk fmt --force
+        entry: ./trunk fmt
         language: system
         stages: [pre-commit]
