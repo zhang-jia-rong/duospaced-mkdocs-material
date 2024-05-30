@@ -56,7 +56,7 @@ RUN \
   fi \
 && \
   # Overwrite existing files in /usr/local/lib/python3.11/site-packages/material
-  cp -rf ./material $PACKAGES/material \
+  rm -rf $PACKAGES/material && mkdir -p $PACKAGES/material && cp -r ./material/. $PACKAGES/material \
 && \
   apk del .build \
 && \

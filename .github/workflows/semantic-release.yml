@@ -35,6 +35,15 @@ jobs:
           force: ${{ startsWith(github.ref, 'refs/heads/release/') && github.event_name != 'workflow_dispatch' && 'prerelease' || '' }}
         id: print
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Update package.json version
+        run: |
+          npm version --no-git-tag-version ${{ steps.print.outputs.version }}
+
       - name: Create new release branch
         if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination == ''
         run: |
