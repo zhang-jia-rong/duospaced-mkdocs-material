@@ -118,5 +118,5 @@ jobs:
           set: |
             mkdocs.tags=ckwing/duospaced-mkdocs-material:${{ steps.semantic.outputs.version }}
             ${{ contains(steps.semantic.outputs.version, '-') && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:next') || format('mkdocs.tags=ckwing/duospaced-mkdocs-material:latest') }}
-            ${{ env.major != '0' && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}', env.major) || '' }}
-            ${{ format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}.{1}', env.major, env.minor) }}
+            ${{ !contains(steps.semantic.outputs.version, '-') && env.major != '0' && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}', env.major) || '' }}
+            ${{ !contains(steps.semantic.outputs.version, '-') && format('mkdocs.tags=ckwing/duospaced-mkdocs-material:{0}.{1}', env.major, env.minor) || '' }}
