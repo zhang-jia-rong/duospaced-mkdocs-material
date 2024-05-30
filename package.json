@@ -1,6 +1,6 @@
 {
   "name": "duospaced-mkdocs-material",
-  "version": "0.3.0",
+  "version": "0.4.0-rc.5",
   "private": true,
   "description": "Custom MkDocs Docker image with unique font styles and automated Docker image building via GitHub Actions",
   "keywords": [

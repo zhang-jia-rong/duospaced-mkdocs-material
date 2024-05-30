@@ -2,6 +2,17 @@
 
 
 
+## v0.4.0-rc.5 (2024-05-30)
+
+### Style
+
+* style: update copyright.html and CI configuration
+
+- Shorten the generator description in copyright.html
+- Replace author name with Docker username &#39;ckwing&#39; in copyright.html
+- Stage package.json after version update in CI configuration ([`6358d90`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6358d906ab7200243dd6993fb8bc409668c11955))
+
+
 ## v0.4.0-rc.4 (2024-05-30)
 
 ### Fix
