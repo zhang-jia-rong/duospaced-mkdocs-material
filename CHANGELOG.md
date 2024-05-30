@@ -2,6 +2,16 @@
 
 
 
+## v0.4.0-rc.4 (2024-05-30)
+
+### Fix
+
+* fix: Update CI config and Dockerfile
+
+- Use npm in CI for package.json version
+- Use COPY in Dockerfile for file handling ([`b7d5614`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/b7d5614a9a463a54a84e54f00f00eff52e730c2d))
+
+
 ## v0.4.0-rc.3 (2024-05-30)
 
 ### Feature
