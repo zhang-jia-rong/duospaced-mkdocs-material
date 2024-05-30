@@ -43,6 +43,7 @@ jobs:
       - name: Update package.json version
         run: |
           npm version --no-git-tag-version ${{ steps.print.outputs.version }}
+          git add package.json
 
       - name: Create new release branch
         if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination == ''
