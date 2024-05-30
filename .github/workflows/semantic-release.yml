@@ -32,16 +32,8 @@ jobs:
         uses: python-semantic-release/python-semantic-release@master
         with:
           root_options: -vv --noop --strict
+          force: ${{ startsWith(github.ref, 'refs/heads/release/') && github.event_name != 'workflow_dispatch' && 'prerelease' || '' }}
         id: print
-        if: "!startsWith(github.ref, 'refs/heads/release/') || github.event_name == 'workflow_dispatch'"
-
-      - name: Print next version (Force Prerelease)
-        uses: python-semantic-release/python-semantic-release@master
-        with:
-          root_options: -vv --noop --strict
-          force: prerelease
-        id: print
-        if: "startsWith(github.ref, 'refs/heads/release/') && github.event_name != 'workflow_dispatch'"
 
       - name: Create new release branch
         if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop' && github.event.inputs.merge_destination == ''
@@ -83,21 +75,8 @@ jobs:
           ssh_public_signing_key: ${{ secrets.SSH_PUBLIC_SIGNING_KEY }}
           ssh_private_signing_key: ${{ secrets.SSH_PRIVATE_SIGNING_KEY }}
           root_options: -vv --strict
+          force: ${{ startsWith(github.ref, 'refs/heads/release/') && github.event_name != 'workflow_dispatch' && 'prerelease' || '' }}
         id: semantic
-        if: "!startsWith(github.ref, 'refs/heads/release/') || github.event_name == 'workflow_dispatch'"
-
-      - name: Python Semantic Release (Force Prerelease)
-        uses: python-semantic-release/python-semantic-release@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          git_committer_name: Zhang Jia Rong
-          git_committer_email: zhang-jia-rong@outlook.com
-          ssh_public_signing_key: ${{ secrets.SSH_PUBLIC_SIGNING_KEY }}
-          ssh_private_signing_key: ${{ secrets.SSH_PRIVATE_SIGNING_KEY }}
-          root_options: -vv --strict
-          force: prerelease
-        id: semantic
-        if: "startsWith(github.ref, 'refs/heads/release/') && github.event_name != 'workflow_dispatch'"
 
       - name: Promote pre-release to release
         if: github.event_name == 'workflow_dispatch' && startsWith(github.ref, 'refs/heads/release/')
