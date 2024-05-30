@@ -2,6 +2,32 @@
 
 
 
+## v0.4.0-rc.2 (2024-05-30)
+
+### Ci
+
+* ci: optimize force option in CI config ([`05b959f`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/05b959fe7605e7b3d18ad62a78c28cd98c5218e7))
+
+* ci: adjust semantic release in CI config
+
+Modify the &#39;Print next version&#39; and &#39;Python Semantic Release&#39; steps in
+the GitHub CI configuration to handle manual dispatch events
+differently. For manual dispatch events on the &#39;release/*&#39; branch, the
+&#39;force&#39; option is not used. This change ensures that the semantic
+release process behaves as expected for different types of workflow
+events and branches. ([`0f32091`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0f32091c6e9798580bda7e718bdcbed1dc04aca3))
+
+### Style
+
+* style: revise notice text and Docker tag rules
+
+Update the generator notice in copyright.html to start with English,
+maintain a 1:1 ratio of English to Chinese characters, and apply HTML
+effects for improved readability and aesthetic appeal. Modify Docker
+image tagging in semantic-release.yml to only tag with major.minor or
+major (greater than 0) for release versions. ([`0212281`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/021228193a719a51f32ea9d73917aa92defcb97f))
+
+
 ## v0.4.0-rc.1 (2024-05-30)
 
 ### Build
