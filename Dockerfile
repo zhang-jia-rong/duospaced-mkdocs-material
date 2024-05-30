@@ -55,6 +55,9 @@ RUN \
     pip install -U -r user-requirements.txt; \
   fi \
 && \
+  # Overwrite existing files in /usr/local/lib/python3.11/site-packages/material
+  cp -rf ./material $PACKAGES/material \
+&& \
   apk del .build \
 && \
   for theme in mkdocs readthedocs; do \
