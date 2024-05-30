@@ -2,6 +2,18 @@
 
 
 
+## v0.4.0-rc.3 (2024-05-30)
+
+### Feature
+
+* feat: overwrite material in Dockerfile
+
+Update Dockerfile to include a step that overwrites the existing files
+in /usr/local/lib/python3.11/site-packages/material with the material
+directory in the WORKDIR. This ensures that the latest material files
+are used during the build process. ([`ca7f447`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/ca7f447701f6071fb89317af7e12d4c28c0a560d))
+
+
 ## v0.4.0-rc.2 (2024-05-30)
 
 ### Ci
