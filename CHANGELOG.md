@@ -2,6 +2,68 @@
 
 
 
+## v0.4.0-rc.1 (2024-05-30)
+
+### Build
+
+* build: Update Dockerfile to python:3.11-alpine
+
+This commit updates the Dockerfile to use the python:3.11-alpine3.18
+base image instead of the squidfunk/mkdocs-material:9.5.17 image. This
+change ensures compatibility with the latest version of Python and the
+Alpine Linux distribution.
+
+These changes follow the conventions established in the recent
+repository commits. ([`6f3af49`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6f3af4999f5af3db13e9c9d017024d63e3d4fa89))
+
+* build: update npm dependencies to latest versions
+
+This commit updates the npm dependencies in the package.json file to
+their latest stable versions. Keeping dependencies up to date ensures
+compatibility, security, and access to new features.
+
+These changes follow the conventions established in the recent
+repository commits. ([`461f113`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/461f1131dc5c059c0b8d5f476ac223a657457ce6))
+
+* build: update requirements.txt with deps ([`08ba398`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/08ba398d847947b075e6d285ced04e856db71380))
+
+* build: update pyproject.toml and LICENSE
+
+This commit updates the dependencies in the pyproject.toml file and adds
+the MIT License to the repository.
+
+The pyproject.toml update includes adding the &#39;hatch-nodejs-version&#39;
+package with a minimum version of 0.3.0 and the &#39;trove_classifiers&#39;
+package with a minimum version of 2023.10.18. These updates are
+necessary for compatibility and to ensure the project meets the required
+standards.
+
+The LICENSE update grants permission to use, copy, modify, merge,
+publish, distribute, sublicense, and sell the software. It also includes
+the copyright notice and disclaimer of warranty.
+
+These changes follow the conventions established in the recent
+repository commits. ([`21bba30`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/21bba30e43e3f365b0e0424311676a1b68f92735))
+
+### Chore
+
+* chore: include README.md in Docker build context
+
+This commit removes the exclusion of README.md from the Docker build
+context by updating the .dockerignore file. This resolves the Docker
+build error caused by Docker not being able to find the README.md file. ([`e319e26`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/e319e26046c057688aeb8ce41991b837399f1740))
+
+* chore: update Trunk CLI and plugin versions ([`0dcec79`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0dcec797714f5f563fe01c1dafa1bcb8e69ddcb1))
+
+### Feature
+
+* feat: import mkdocs-material directory
+
+This commit imports the material directory from the
+squidfunk/mkdocs-material repository. The style linter has been disabled
+for this directory to avoid conflicts with the original styling. ([`5051658`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/50516584f04f103359ec0b0dc93b069634f3bfc9))
+
+
 ## v0.3.0 (2024-05-17)
 
 ### Ci
