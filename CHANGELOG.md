@@ -1,9 +1,24 @@
 # CHANGELOG
 
+## v0.5.0-rc.1 (2024-07-02)
 
+### Feature
+
+* feat: add jieba, git date &amp; authors plugins
+
+- Added jieba for Chinese language support in search.
+- Integrated mkdocs-git-revision-date-localized-plugin for document
+  update dates.
+- Utilized mkdocs-git-authors-plugin for author display.
+- Removed mkdocs-material from requirements-dev.txt as the custom
+  generator supersedes it.
+- Updated trunk for enhanced project structure and functionality.
+
+These changes enhance the documentation generator with better language
+support, git integration for document metadata, and streamline
+development dependencies. ([`7d580ba`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7d580ba62994646527012350d22650a82f12e1aa))
 
 ## v0.4.0 (2024-05-30)
-
 
 ## v0.4.0-rc.5 (2024-05-30)
 
@@ -15,7 +30,6 @@
 - Replace author name with Docker username &#39;ckwing&#39; in copyright.html
 - Stage package.json after version update in CI configuration ([`6358d90`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6358d906ab7200243dd6993fb8bc409668c11955))
 
-
 ## v0.4.0-rc.4 (2024-05-30)
 
 ### Fix
@@ -24,7 +38,6 @@
 
 - Use npm in CI for package.json version
 - Use COPY in Dockerfile for file handling ([`b7d5614`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/b7d5614a9a463a54a84e54f00f00eff52e730c2d))
-
 
 ## v0.4.0-rc.3 (2024-05-30)
 
@@ -36,7 +49,6 @@ Update Dockerfile to include a step that overwrites the existing files
 in /usr/local/lib/python3.11/site-packages/material with the material
 directory in the WORKDIR. This ensures that the latest material files
 are used during the build process. ([`ca7f447`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/ca7f447701f6071fb89317af7e12d4c28c0a560d))
-
 
 ## v0.4.0-rc.2 (2024-05-30)
 
@@ -62,7 +74,6 @@ maintain a 1:1 ratio of English to Chinese characters, and apply HTML
 effects for improved readability and aesthetic appeal. Modify Docker
 image tagging in semantic-release.yml to only tag with major.minor or
 major (greater than 0) for release versions. ([`0212281`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/021228193a719a51f32ea9d73917aa92defcb97f))
-
 
 ## v0.4.0-rc.1 (2024-05-30)
 
@@ -125,7 +136,6 @@ This commit imports the material directory from the
 squidfunk/mkdocs-material repository. The style linter has been disabled
 for this directory to avoid conflicts with the original styling. ([`5051658`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/50516584f04f103359ec0b0dc93b069634f3bfc9))
 
-
 ## v0.3.0 (2024-05-17)
 
 ### Ci
@@ -154,7 +164,6 @@ either the `latest` or `next` tag based on whether the version includes
 a `-`. This aligns with our versioning policy and aids in Docker image
 management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6c131c60cc616d2586feec107671430a02df2047))
 
-
 ## v0.3.0-rc.1 (2024-05-17)
 
 ### Ci
@@ -172,7 +181,6 @@ management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-mate
 ### Fix
 
 * fix: update path for copying stylesheets directory ([`0afa194`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0afa194bb61b9f5656692a7ac060dc01a715cbd7))
-
 
 ## v0.2.0 (2024-04-30)
 
@@ -196,13 +204,11 @@ management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-mate
 
 * style: add config for linters to ignore CHANGELOG ([`a253e1a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a253e1a964d1881795bcf8fcab9ca79cda2c7c03))
 
-
 ## v0.2.0-rc.2 (2024-04-30)
 
 ### Feature
 
 * feat: add default_styles.css for font settings ([`9fad624`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/9fad624d8d175f7c68dff3c9a4ecd07620153bec))
-
 
 ## v0.2.0-rc.1 (2024-04-30)
 
@@ -230,9 +236,7 @@ management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-mate
 
 * feat: add font downloads to build script ([`df0eb96`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/df0eb9697fa1ae1ca8c58790239e19280a36de28))
 
-
 ## v0.1.0 (2024-04-27)
-
 
 ## v0.1.0-rc.1 (2024-04-26)
 
