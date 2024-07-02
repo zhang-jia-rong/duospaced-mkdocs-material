@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v0.6.0-rc.1 (2024-07-02)
+
+### Feature
+
+* feat: add mkdocs-git-committers-plugin-2 v2.3.0
+
+- Integrated mkdocs-git-committers-plugin-2 to enhance documentation
+  with detailed committer information. ([`7725588`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/77255883d957b21218509641505ebd04c83bfb41))
+
 ## v0.5.0 (2024-07-02)
 
 ## v0.5.0-rc.1 (2024-07-02)
