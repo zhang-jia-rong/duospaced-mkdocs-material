@@ -14,6 +14,7 @@ regex>=2022.4
 requests~=2.26
 
 # Custom features
-jieba==0.42.1
 mkdocs-git-revision-date-localized-plugin==1.2.6
+mkdocs-git-committers-plugin-2==2.3.0
 mkdocs-git-authors-plugin==0.9.0
+jieba==0.42.1
