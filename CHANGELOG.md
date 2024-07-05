@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v0.7.0-rc.1 (2024-07-05)
+
+### Build
+
+* build: update OpenSSH version in Dockerfile
+
+- Updated OpenSSH package version to 9.3_p2-r2 in Dockerfile to resolve
+  package version conflict during build process.
+- Ensures compatibility with the latest Alpine Linux package repository. ([`775d1c1`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/775d1c12ee1c40cd9cf71a2acb1371fe53235d8f))
+
+### Feature
+
+* feat: add mkdoxy v1.2.4 to MkDocs
+
+- Added mkdoxy v1.2.4, enhancing MkDocs with powerful documentation
+  generation capabilities from source code.
+- Key features include:
+  - Easy setup: Simply configure mkdoxy in mkdocs.yml.
+  - Code snippets: Automatically generate code snippets.
+  - Multi-project support: Ideal for combined C++ and Python docs.
+  - Multiple source directories: Allows specifying several source paths.
+  - Custom templates: Use Jinja for tailored Doxygen documentation.
+  - Custom Doxygen config: Fine-tune Doxygen settings per project.
+This integration significantly boosts the documentation process by
+leveraging Doxygen within the MkDocs ecosystem. ([`3197be3`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/3197be30f283bca36859c812abb55caf0b98fefc))
+
 ## v0.6.0 (2024-07-02)
 
 ## v0.6.0-rc.1 (2024-07-02)
