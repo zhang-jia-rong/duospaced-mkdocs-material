@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v0.8.1-rc.1 (2024-07-09)
+
+### Fix
+
+* fix: add openpyxl to requirements.txt
+
+- Added openpyxl==3.1.5 to the optional requirements section in
+  requirements.txt.
+- Resolves the error related to missing optional dependency &#39;openpyxl&#39;
+  when reading pages with mkdocs-table-reader-plugin. ([`19086a7`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/19086a7bd7d1cf17d2847f9870ca42cf69b8ed06))
+
 ## v0.8.0 (2024-07-09)
 
 ## v0.8.0-rc.1 (2024-07-09)
