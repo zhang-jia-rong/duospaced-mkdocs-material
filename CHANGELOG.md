@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.8.0-rc.1 (2024-07-09)
+
+### Feature
+
+* feat: add CSV/Excel data import feature to mkdocs
+
+- Integrated mkdocs-table-reader-plugin v2.2.2 to enable importing data
+  directly from CSV or Excel files into MkDocs pages.
+- Enhances documentation flexibility and data presentation. ([`e2c3e30`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/e2c3e309840f641b61323a70a4af926742efcffe))
+
 ## v0.7.0 (2024-07-06)
 
 ## v0.7.0-rc.1 (2024-07-05)
