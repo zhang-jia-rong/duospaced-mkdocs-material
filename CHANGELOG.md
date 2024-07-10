@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## v0.8.2-rc.1 (2024-07-10)
+
+### Fix
+
+* fix: remove force prerelease option
+
+- Deleted the force option in semantic-release configuration to prevent
+  automatic prerelease version bumps.
+- Ensures that version increments follow the standard release process
+  without forced prerelease increments. ([`4adea23`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4adea2333f556e4952447fbdb412b4c32b868ee0))
+
+* fix: add Excel file engines to requirements.txt
+
+- Added python-calamine==0.2.0, pyxlsb==1.0.10, and xlrd&gt;=2.0.1 to the
+  optional requirements section in requirements.txt.
+- Resolves ImportError related to missing optional dependencies for
+  handling various Excel file formats. ([`4d1d83a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4d1d83a7d33d4f56b3e881cbe81e9add52133776))
+
 ## v0.8.1 (2024-07-09)
 
 ## v0.8.1-rc.1 (2024-07-09)
