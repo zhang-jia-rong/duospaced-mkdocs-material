@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v0.9.0-rc.1 (2024-07-13)
+
+### Feature
+
+* feat: upgrade Dockerfile and linters
+
+Updated the Dockerfile to include doxygen installation with --no-cache
+option to keep the image size minimal. Upgraded osv-scanner to 1.8.3
+and checkov to 3.2.185 in trunk.yaml for improved security and
+compliance checks. ([`5edb87e`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/5edb87ec42f1481fbd38e6943318766e129010d4))
+
 ## v0.8.2 (2024-07-10)
 
 ## v0.8.2-rc.1 (2024-07-10)
