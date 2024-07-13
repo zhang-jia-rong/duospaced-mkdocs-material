@@ -35,6 +35,7 @@ RUN \
     openssh=9.3_p2-r2 \
     tini=0.19.0-r1 \
     zlib-dev=1.2.13-r1 \
+    doxygen=1.9.6-r1 \
 && \
   apk add --no-cache --virtual .build \
     gcc=12.2.1_git20220924-r10 \
