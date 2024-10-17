@@ -1,10 +1,38 @@
 # CHANGELOG
 
+
+## v0.10.0-rc.1 (2024-10-17)
+
+### Features
+
+* feat: add mkdocs-autorefs and mkdocs-pdf plugins
+
+Added 'mkdocs-autorefs' and 'mkdocs-pdf' plugins to the requirements.txt
+file.
+- 'mkdocs-autorefs' enables automatic referencing of Markdown headings
+  within a MkDocs site.
+- 'mkdocs-pdf' allows embedding PDFs in your documentation using
+  standard Markdown syntax.
+
+Refactored the requirements.txt file to include the following additional
+libraries:
+- mkdocs-autorefs==1.2.0
+- mkdocs-pdf==0.1.2 ([`5223b28`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/5223b28b56578c31fef335c6c3b1a90bab15cf3d))
+
+### Fixes
+
+* fix: update Dockerfile to resolve conflicts
+
+Updated git to version 2.40.3-r0 and git-fast-import to version
+2.40.3-r0 to resolve version conflicts. ([`f5e9278`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/f5e927862a772af0291aa384092895212776feb4))
+
+
 ## v0.9.0 (2024-07-13)
+
 
 ## v0.9.0-rc.1 (2024-07-13)
 
-### Feature
+### Features
 
 * feat: upgrade Dockerfile and linters
 
@@ -13,11 +41,13 @@ option to keep the image size minimal. Upgraded osv-scanner to 1.8.3
 and checkov to 3.2.185 in trunk.yaml for improved security and
 compliance checks. ([`5edb87e`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/5edb87ec42f1481fbd38e6943318766e129010d4))
 
+
 ## v0.8.2 (2024-07-10)
+
 
 ## v0.8.2-rc.1 (2024-07-10)
 
-### Fix
+### Fixes
 
 * fix: remove force prerelease option
 
@@ -28,29 +58,33 @@ compliance checks. ([`5edb87e`](https://github.com/zhang-jia-rong/duospaced-mkdo
 
 * fix: add Excel file engines to requirements.txt
 
-- Added python-calamine==0.2.0, pyxlsb==1.0.10, and xlrd&gt;=2.0.1 to the
+- Added python-calamine==0.2.0, pyxlsb==1.0.10, and xlrd>=2.0.1 to the
   optional requirements section in requirements.txt.
 - Resolves ImportError related to missing optional dependencies for
   handling various Excel file formats. ([`4d1d83a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4d1d83a7d33d4f56b3e881cbe81e9add52133776))
 
+
 ## v0.8.1 (2024-07-09)
+
 
 ## v0.8.1-rc.1 (2024-07-09)
 
-### Fix
+### Fixes
 
 * fix: add openpyxl to requirements.txt
 
 - Added openpyxl==3.1.5 to the optional requirements section in
   requirements.txt.
-- Resolves the error related to missing optional dependency &#39;openpyxl&#39;
+- Resolves the error related to missing optional dependency 'openpyxl'
   when reading pages with mkdocs-table-reader-plugin. ([`19086a7`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/19086a7bd7d1cf17d2847f9870ca42cf69b8ed06))
+
 
 ## v0.8.0 (2024-07-09)
 
+
 ## v0.8.0-rc.1 (2024-07-09)
 
-### Feature
+### Features
 
 * feat: add CSV/Excel data import feature to mkdocs
 
@@ -58,11 +92,13 @@ compliance checks. ([`5edb87e`](https://github.com/zhang-jia-rong/duospaced-mkdo
   directly from CSV or Excel files into MkDocs pages.
 - Enhances documentation flexibility and data presentation. ([`e2c3e30`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/e2c3e309840f641b61323a70a4af926742efcffe))
 
+
 ## v0.7.0 (2024-07-06)
+
 
 ## v0.7.0-rc.1 (2024-07-05)
 
-### Build
+### Build System
 
 * build: update OpenSSH version in Dockerfile
 
@@ -70,7 +106,7 @@ compliance checks. ([`5edb87e`](https://github.com/zhang-jia-rong/duospaced-mkdo
   package version conflict during build process.
 - Ensures compatibility with the latest Alpine Linux package repository. ([`775d1c1`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/775d1c12ee1c40cd9cf71a2acb1371fe53235d8f))
 
-### Feature
+### Features
 
 * feat: add mkdoxy v1.2.4 to MkDocs
 
@@ -86,24 +122,28 @@ compliance checks. ([`5edb87e`](https://github.com/zhang-jia-rong/duospaced-mkdo
 This integration significantly boosts the documentation process by
 leveraging Doxygen within the MkDocs ecosystem. ([`3197be3`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/3197be30f283bca36859c812abb55caf0b98fefc))
 
+
 ## v0.6.0 (2024-07-02)
+
 
 ## v0.6.0-rc.1 (2024-07-02)
 
-### Feature
+### Features
 
 * feat: add mkdocs-git-committers-plugin-2 v2.3.0
 
 - Integrated mkdocs-git-committers-plugin-2 to enhance documentation
   with detailed committer information. ([`7725588`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/77255883d957b21218509641505ebd04c83bfb41))
 
+
 ## v0.5.0 (2024-07-02)
+
 
 ## v0.5.0-rc.1 (2024-07-02)
 
-### Feature
+### Features
 
-* feat: add jieba, git date &amp; authors plugins
+* feat: add jieba, git date & authors plugins
 
 - Added jieba for Chinese language support in search.
 - Integrated mkdocs-git-revision-date-localized-plugin for document
@@ -117,30 +157,34 @@ These changes enhance the documentation generator with better language
 support, git integration for document metadata, and streamline
 development dependencies. ([`7d580ba`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7d580ba62994646527012350d22650a82f12e1aa))
 
+
 ## v0.4.0 (2024-05-30)
+
 
 ## v0.4.0-rc.5 (2024-05-30)
 
-### Style
+### Code Style
 
 * style: update copyright.html and CI configuration
 
 - Shorten the generator description in copyright.html
-- Replace author name with Docker username &#39;ckwing&#39; in copyright.html
+- Replace author name with Docker username 'ckwing' in copyright.html
 - Stage package.json after version update in CI configuration ([`6358d90`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6358d906ab7200243dd6993fb8bc409668c11955))
+
 
 ## v0.4.0-rc.4 (2024-05-30)
 
-### Fix
+### Fixes
 
 * fix: Update CI config and Dockerfile
 
 - Use npm in CI for package.json version
 - Use COPY in Dockerfile for file handling ([`b7d5614`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/b7d5614a9a463a54a84e54f00f00eff52e730c2d))
 
+
 ## v0.4.0-rc.3 (2024-05-30)
 
-### Feature
+### Features
 
 * feat: overwrite material in Dockerfile
 
@@ -149,22 +193,10 @@ in /usr/local/lib/python3.11/site-packages/material with the material
 directory in the WORKDIR. This ensures that the latest material files
 are used during the build process. ([`ca7f447`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/ca7f447701f6071fb89317af7e12d4c28c0a560d))
 
+
 ## v0.4.0-rc.2 (2024-05-30)
 
-### Ci
-
-* ci: optimize force option in CI config ([`05b959f`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/05b959fe7605e7b3d18ad62a78c28cd98c5218e7))
-
-* ci: adjust semantic release in CI config
-
-Modify the &#39;Print next version&#39; and &#39;Python Semantic Release&#39; steps in
-the GitHub CI configuration to handle manual dispatch events
-differently. For manual dispatch events on the &#39;release/*&#39; branch, the
-&#39;force&#39; option is not used. This change ensures that the semantic
-release process behaves as expected for different types of workflow
-events and branches. ([`0f32091`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0f32091c6e9798580bda7e718bdcbed1dc04aca3))
-
-### Style
+### Code Style
 
 * style: revise notice text and Docker tag rules
 
@@ -174,9 +206,23 @@ effects for improved readability and aesthetic appeal. Modify Docker
 image tagging in semantic-release.yml to only tag with major.minor or
 major (greater than 0) for release versions. ([`0212281`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/021228193a719a51f32ea9d73917aa92defcb97f))
 
+### Continuous Integration
+
+* ci: optimize force option in CI config ([`05b959f`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/05b959fe7605e7b3d18ad62a78c28cd98c5218e7))
+
+* ci: adjust semantic release in CI config
+
+Modify the 'Print next version' and 'Python Semantic Release' steps in
+the GitHub CI configuration to handle manual dispatch events
+differently. For manual dispatch events on the 'release/*' branch, the
+'force' option is not used. This change ensures that the semantic
+release process behaves as expected for different types of workflow
+events and branches. ([`0f32091`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0f32091c6e9798580bda7e718bdcbed1dc04aca3))
+
+
 ## v0.4.0-rc.1 (2024-05-30)
 
-### Build
+### Build System
 
 * build: Update Dockerfile to python:3.11-alpine
 
@@ -204,8 +250,8 @@ repository commits. ([`461f113`](https://github.com/zhang-jia-rong/duospaced-mkd
 This commit updates the dependencies in the pyproject.toml file and adds
 the MIT License to the repository.
 
-The pyproject.toml update includes adding the &#39;hatch-nodejs-version&#39;
-package with a minimum version of 0.3.0 and the &#39;trove_classifiers&#39;
+The pyproject.toml update includes adding the 'hatch-nodejs-version'
+package with a minimum version of 0.3.0 and the 'trove_classifiers'
 package with a minimum version of 2023.10.18. These updates are
 necessary for compatibility and to ensure the project meets the required
 standards.
@@ -217,7 +263,7 @@ the copyright notice and disclaimer of warranty.
 These changes follow the conventions established in the recent
 repository commits. ([`21bba30`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/21bba30e43e3f365b0e0424311676a1b68f92735))
 
-### Chore
+### Chores
 
 * chore: include README.md in Docker build context
 
@@ -227,7 +273,7 @@ build error caused by Docker not being able to find the README.md file. ([`e319e
 
 * chore: update Trunk CLI and plugin versions ([`0dcec79`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0dcec797714f5f563fe01c1dafa1bcb8e69ddcb1))
 
-### Feature
+### Features
 
 * feat: import mkdocs-material directory
 
@@ -235,14 +281,15 @@ This commit imports the material directory from the
 squidfunk/mkdocs-material repository. The style linter has been disabled
 for this directory to avoid conflicts with the original styling. ([`5051658`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/50516584f04f103359ec0b0dc93b069634f3bfc9))
 
+
 ## v0.3.0 (2024-05-17)
 
-### Ci
+### Continuous Integration
 
-* ci: remove &#34;Configure Git Credentials&#34;
+* ci: remove "Configure Git Credentials"
 
-This commit removes the &#34;Configure Git
-Credentials&#34; step from the Deploy Docs workflow.
+This commit removes the "Configure Git
+Credentials" step from the Deploy Docs workflow.
 The Docker-based deployment does not require these
 credentials, making this step unnecessary. ([`eddabdb`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/eddabdbed3f68acdc2db68515355036801722cef))
 
@@ -250,8 +297,8 @@ credentials, making this step unnecessary. ([`eddabdb`](https://github.com/zhang
 
 This commit adjusts the Docker image tagging strategy in the
 semantic-release workflow. Now, images will be tagged with the full
-version, the major and minor version, the major version (excluding &#39;0&#39;),
-and either &#39;latest&#39; or &#39;next&#39; based on the version. This change improves
+version, the major and minor version, the major version (excluding '0'),
+and either 'latest' or 'next' based on the version. This change improves
 the management and identification of Docker images. ([`b9b26c2`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/b9b26c28c748bcc23fa2f499ed0a525a9b37a3ec))
 
 * ci: update Docker tagging in GitHub Actions
@@ -263,27 +310,33 @@ either the `latest` or `next` tag based on whether the version includes
 a `-`. This aligns with our versioning policy and aids in Docker image
 management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/6c131c60cc616d2586feec107671430a02df2047))
 
+
 ## v0.3.0-rc.1 (2024-05-17)
 
-### Ci
+### Continuous Integration
 
 * ci: revise semantic-release syntax ([`3ae7b2c`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/3ae7b2c419a5ba069a83907631b4d598a0c3bc11))
 
-* ci: rename workflow to &#39;Deploy Docs&#39; ([`4be7fdc`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4be7fdc7ee6f5eda326f4377561cfc4c5632dfc6))
+* ci: rename workflow to 'Deploy Docs' ([`4be7fdc`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/4be7fdc7ee6f5eda326f4377561cfc4c5632dfc6))
 
 * ci: update image tags based on SemVer components ([`9130ebc`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/9130ebc0bd51eb3106f91ebddce2226278901d77))
 
-### Feature
+### Features
 
 * feat: copy stylesheets directory for safekeeping ([`75421c7`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/75421c744f704f5fdfd291fca348d97bf6f39083))
 
-### Fix
+### Fixes
 
 * fix: update path for copying stylesheets directory ([`0afa194`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0afa194bb61b9f5656692a7ac060dc01a715cbd7))
 
+
 ## v0.2.0 (2024-04-30)
 
-### Ci
+### Code Style
+
+* style: add config for linters to ignore CHANGELOG ([`a253e1a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a253e1a964d1881795bcf8fcab9ca79cda2c7c03))
+
+### Continuous Integration
 
 * ci: resolve issue with merging release/0.2 ([`0728c86`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/0728c86e65d5ad79bb40750906141434a54511c8))
 
@@ -299,19 +352,17 @@ management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-mate
 
 * docs: add deployment workflow for documentation ([`39556b3`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/39556b3a881f3773592e9cb93f8f81a24a489e8a))
 
-### Style
-
-* style: add config for linters to ignore CHANGELOG ([`a253e1a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a253e1a964d1881795bcf8fcab9ca79cda2c7c03))
 
 ## v0.2.0-rc.2 (2024-04-30)
 
-### Feature
+### Features
 
 * feat: add default_styles.css for font settings ([`9fad624`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/9fad624d8d175f7c68dff3c9a4ecd07620153bec))
 
+
 ## v0.2.0-rc.1 (2024-04-30)
 
-### Ci
+### Continuous Integration
 
 * ci: update release configuration and Docker action ([`a5ade1b`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a5ade1b1e4fb346d9b87f149c794a16f8a4502bf))
 
@@ -331,25 +382,31 @@ management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-mate
 
 * ci: update tags in semantic-release workflow ([`7e65a17`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7e65a17d9f709b8b7dea5e93725675d020816faa))
 
-### Feature
+### Features
 
 * feat: add font downloads to build script ([`df0eb96`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/df0eb9697fa1ae1ca8c58790239e19280a36de28))
 
+
 ## v0.1.0 (2024-04-27)
+
 
 ## v0.1.0-rc.1 (2024-04-26)
 
-### Build
+### Build System
 
 * build: update requirements and requirements-dev ([`9b3f17e`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/9b3f17e182f6d68e973cca46d966181d77a754c8))
 
-### Chore
+### Chores
 
 * chore: update pre-commit hooks to use gitlint ([`61d924a`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/61d924a0124d589e91c9807d848467bab8bd9262))
 
 * chore: add config files and ignore files and dirs ([`8eeb679`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/8eeb6798d256aeae5d6889289e70e9a18ae435ab))
 
-### Ci
+### Code Style
+
+* style: add hook and update yamllint configuration ([`98b4b7d`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/98b4b7d404bbd6ec9930d6c49dfe3aa4d28a2c2a))
+
+### Continuous Integration
 
 * ci: fix git_committer_name in semantic-release ([`7395a49`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7395a4919991cd494ae11e2b49124df37f0bb538))
 
@@ -365,20 +422,16 @@ management. ([`6c131c6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-mate
 
 * ci: update root_options in semantic-release ([`e3187a6`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/e3187a67e1615765cf16eab2d6835936896ca7be))
 
-* ci: include &#39;develop&#39; branch in semantic-release ([`8f4c6d0`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/8f4c6d01c4489ba522738cc3b84cd7cb30c4cec6))
+* ci: include 'develop' branch in semantic-release ([`8f4c6d0`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/8f4c6d01c4489ba522738cc3b84cd7cb30c4cec6))
 
 * ci: include GPG signing and Docker image build ([`5c89d46`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/5c89d46dba738b9cd158929bf99c3ba9b421ce63))
 
 * ci: add semantic-release workflow ([`791e11e`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/791e11e04f134e65594c33f25a9e9498081d5644))
 
-### Feature
+### Features
 
 * feat: update Docker and configure OCI labels ([`98098bf`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/98098bf97ab4c6b5aef150715df77f2a5055fe31))
 
 * feat: update Docker config and add mkdocs files ([`a02ed15`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/a02ed15afd6dcc824fb1c4d948f516657b7ca90a))
 
 * feat: bootstrap the project documentation ([`28eb72e`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/28eb72ef2333f900aa79f57a1d4d7e334a1d05e5))
-
-### Style
-
-* style: add hook and update yamllint configuration ([`98b4b7d`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/98b4b7d404bbd6ec9930d6c49dfe3aa4d28a2c2a))
