@@ -29,8 +29,8 @@ RUN \
   apk add --no-cache \
     cairo=1.17.8-r1 \
     freetype-dev=2.13.0-r5 \
-    git=2.40.1-r0 \
-    git-fast-import=2.40.1-r0 \
+    git=2.40.3-r0 \
+    git-fast-import=2.40.3-r0 \
     jpeg-dev=9e-r1 \
     openssh=9.3_p2-r2 \
     tini=0.19.0-r1 \
