@@ -1,6 +1,20 @@
 # CHANGELOG
 
 
+## v0.10.1-rc.1 (2024-12-13)
+
+### Bug Fixes
+
+- Upgrade git-committers-plugin-2 to 2.4.1
+  ([`16f113f`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/16f113f87ac25584ec8f0363d173fd4b9411f321))
+
+Fixed the api_version configuration warning in CI builds by upgrading to version 2.4.1. This version
+  resolves the UnboundLocalError related to user variables in both GitHub and GitLab integrations.
+
+The upgrade also includes improvements from 2.4.0 such as better handling of private repositories,
+  co-authors support, and fixes for avatar loading issues in GitLab.
+
+
 ## v0.10.0 (2024-12-13)
 
 
