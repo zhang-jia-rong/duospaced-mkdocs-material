@@ -1,6 +1,29 @@
 # CHANGELOG
 
 
+## v0.11.0-rc.3 (2024-12-14)
+
+### Bug Fixes
+
+- Add chromium for PDF export
+  ([`04329f5`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/04329f5aec4f543e8c78d89553760839dee3acd9))
+
+The mkdocs-material PDF generation was failing due to missing Chromium dependencies in the Docker
+  container. The error occurred when pyppeteer attempted to launch Chrome but couldn't find the
+  binary at the expected path.
+
+Changes made: - Added chromium package installation via apk - Set specific version
+  chromium=119.0.6045.159-r0 to ensure compatibility - Installed before pyppeteer setup to ensure
+  proper integration
+
+This fix enables proper PDF generation functionality in the mkdocs build process by providing the
+  required Chromium binary that pyppeteer needs for headless browser operations.
+
+Note: Version pinning helps maintain build reproducibility but may need
+
+periodic updates to address security patches.
+
+
 ## v0.11.0-rc.2 (2024-12-14)
 
 ### Performance Improvements
