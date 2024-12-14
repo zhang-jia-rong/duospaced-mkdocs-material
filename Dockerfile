@@ -87,6 +87,9 @@ RUN \
 && \
   if [ -z "$VERSION" ] || [ -z "$BUILD_DATE" ] || [ -z "$VCS_REF" ]; then exit 1; fi
 
+# Pre-install chrome
+RUN pyppeteer-install
+
 # Set the OCI labels
 LABEL org.opencontainers.image.created=$BUILD_DATE \
       org.opencontainers.image.revision=$VCS_REF \
