@@ -21,12 +21,13 @@ mkdocs-table-reader-plugin==2.2.2
 jieba==0.42.1
 
 # Third-party MkDocs plugins
+mkdocs-autorefs==1.2.0
+mkdocs-pdf==0.1.2
 mkdoxy==1.2.4
+mkdocs-page-pdf==0.1.1
 
 # Optional requirements
 openpyxl==3.1.5
 python-calamine==0.2.0
 pyxlsb==1.0.10
 xlrd>=2.0.1
-mkdocs-autorefs==1.2.0
-mkdocs-pdf==0.1.2
