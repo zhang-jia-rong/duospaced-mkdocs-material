@@ -1,6 +1,32 @@
 # CHANGELOG
 
 
+## v0.11.0-rc.4 (2024-12-14)
+
+### Bug Fixes
+
+- Pip requirement syntax
+  ([`d10e111`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/d10e111d37770f34dd90472740268285d30c2d42))
+
+The requirements.txt file contained an invalid pip requirement specification for mkdocs-pdf-generate
+  which caused build failures. The package URL was missing proper PEP 508 syntax for direct git
+  references.
+
+Fixed by reformatting the requirement to use proper @ notation before the git URL, ensuring
+  compatibility with pip's parser and allowing successful package installation during builds.
+
+### Features
+
+- Switch PDF backend to WeasyPrint
+  ([`7bd63d0`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/7bd63d09ec5bafdeb50627888f8f55d5127bebcd))
+
+Replace Chromium-based pyppeteer with WeasyPrint for PDF generation:
+
+- Remove pyppeteer and its Chromium dependency from Dockerfile - Add WeasyPrint and its dependencies
+  to requirements.txt - Reduce Docker image size by eliminating large Chromium download - Improve
+  PDF generation reliability with native WeasyPrint engine
+
+
 ## v0.11.0-rc.3 (2024-12-14)
 
 ### Bug Fixes
