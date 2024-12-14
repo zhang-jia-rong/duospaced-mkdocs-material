@@ -1,6 +1,24 @@
 # CHANGELOG
 
 
+## v0.11.0-rc.1 (2024-12-14)
+
+### Features
+
+- Add PDF generation capability for pages
+  ([`dbc1564`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/dbc1564641c9f427e5504b5af8aebff8907fec35))
+
+Add mkdocs-page-pdf plugin to enable automatic PDF generation for each documentation page. This
+  enhancement allows users to:
+
+- Download individual pages as PDF files - Access documentation offline - Print pages with
+  consistent formatting
+
+The plugin uses pyppeteer (headless Chrome) to render high-quality PDFs that preserve the original
+  page styling and layout. A download button will be automatically added to each page for easy
+  access.
+
+
 ## v0.10.1 (2024-12-14)
 
 
