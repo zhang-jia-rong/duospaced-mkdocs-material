@@ -1,6 +1,25 @@
 # CHANGELOG
 
 
+## v0.11.0-rc.2 (2024-12-14)
+
+### Performance Improvements
+
+- Pre-install Chromium for pyppeteer in build
+  ([`b7ec0dc`](https://github.com/zhang-jia-rong/duospaced-mkdocs-material/commit/b7ec0dc3ff82cfa42608cf090fd2f1bd0e659386))
+
+Add pyppeteer-install step in Dockerfile to pre-download Chromium browser during image build instead
+  of runtime. This change addresses several CI performance and reliability issues:
+
+- Eliminates ~25 minute download time during CI runs - Prevents connection retry issues when
+  downloading Chromium - Reduces CI pipeline flakiness from network-related failures - Ensures
+  consistent Chromium version across builds
+
+The change is required for mkdocs-page-pdf plugin which uses pyppeteer for PDF generation. By
+  installing Chromium (~100MB) during Docker build, we avoid runtime downloads and connection issues
+  that were causing significant CI delays.
+
+
 ## v0.11.0-rc.1 (2024-12-14)
 
 ### Features
