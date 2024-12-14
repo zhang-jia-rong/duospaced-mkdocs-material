@@ -24,7 +24,7 @@ jieba==0.42.1
 mkdocs-autorefs==1.2.0
 mkdocs-pdf==0.1.2
 mkdoxy==1.2.4
-mkdocs-page-pdf==0.1.1
+git+https://github.com/iSOLveIT/mkdocs-pdf-generate.git@33ffa8b#egg=mkdocs-pdf-generate
 
 # Optional requirements
 openpyxl==3.1.5

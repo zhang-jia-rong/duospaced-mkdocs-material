@@ -37,9 +37,9 @@ RUN \
     zlib-dev=1.2.13-r1 \
     doxygen=1.9.6-r1 \
 && \
-  # Install chrome/pyppeteer dependencies for mkdocs to pdf
+  # Install WeasyPrint for PDF generation - requires cairo, Pango and GDK-PixBuf dependencies
   apk add --no-cache \
-    chromium=119.0.6045.159-r0 \
+    weasyprint=58.1-r0 \
 && \
   apk add --no-cache --virtual .build \
     gcc=12.2.1_git20220924-r10 \
@@ -90,9 +90,6 @@ RUN \
   cp -r /docs/docs/stylesheets /tmp/mkdocs_stylesheets_safe \
 && \
   if [ -z "$VERSION" ] || [ -z "$BUILD_DATE" ] || [ -z "$VCS_REF" ]; then exit 1; fi
-
-# Pre-install chrome
-RUN pyppeteer-install
 
 # Set the OCI labels
 LABEL org.opencontainers.image.created=$BUILD_DATE \
