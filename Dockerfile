@@ -37,6 +37,10 @@ RUN \
     zlib-dev=1.2.13-r1 \
     doxygen=1.9.6-r1 \
 && \
+  # Install chrome/pyppeteer dependencies for mkdocs to pdf
+  apk add --no-cache \
+    chromium=119.0.6045.159-r0 \
+&& \
   apk add --no-cache --virtual .build \
     gcc=12.2.1_git20220924-r10 \
     libffi-dev=3.4.4-r2 \
